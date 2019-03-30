@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace api_mastery.Models
 {
-    public class Dog
+    public class DogBreed
     {
         public int ID { get; set; }
         public string Breed { get; set; }
         public string ImageUrl { get; set; }
-        public string BreedInfo { get; set; }
     }
 }

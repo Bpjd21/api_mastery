@@ -26,8 +26,8 @@ namespace api_mastery
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DogContext>();
-            services.AddScoped<IDogRepository, DogRepository>();
+            services.AddDbContext<DogBreedContext>();
+            services.AddScoped<IDogBreedRepository, DogBreedRepository>();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {

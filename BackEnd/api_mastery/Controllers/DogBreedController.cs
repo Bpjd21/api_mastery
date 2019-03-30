@@ -11,25 +11,25 @@ namespace api_mastery.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DogController : ControllerBase
+    public class DogBreedController : ControllerBase
     {
-        private IDogRepository repo;
+        private IDogBreedRepository repo;
 
-        public DogController(IDogRepository repo)
+        public DogBreedController(IDogBreedRepository repo)
         {
             this.repo = repo;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Dog>> Get()
+        public ActionResult<IEnumerable<DogBreed>> Get()
         {
             return repo.GetAll().ToArray();
         }
 
         [HttpPost]
-        public void Post([FromBody] Dog dog)
+        public void Post([FromBody] DogBreed dogBreed)
         {
-            repo.Create(dog);
+            repo.Create(dogBreed);
         }
     }
 }

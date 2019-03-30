@@ -6,9 +6,9 @@ using api_mastery.Models;
 
 namespace api_mastery.Repositories
 {
-    public interface IDogRepository
+    public interface IDogBreedRepository
     {
-        void Create(Dog dog);
-            IEnumerable<Dog> GetAll();
+        void Create(DogBreed dogBreed);
+            IEnumerable<DogBreed> GetAll();
     }
 }

@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace api_mastery
 {
-    public class DogContext : DbContext
+    public class DogBreedContext : DbContext
     {
-        public DbSet<Dog> Dogs { get; set; }
+        public DbSet<DogBreed> DogBreeds { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=Team3Mmemes;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=DogBreeds;Trusted_Connection=True;";
 
             optionsBuilder.UseSqlServer(connectionString)
                           .UseLazyLoadingProxies();
@@ -23,20 +23,24 @@ namespace api_mastery
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Dog>().HasData(
-            new Dog()
+            modelBuilder.Entity<DogBreed>().HasData(
+            new DogBreed()
             {
-                ID = -1,
+                ID = 1,
                 Breed = "Husky",
                 ImageUrl = "/Images/.jpg",
-                BreedInfo = "Alaska",
             },
-            new Dog()
+            new DogBreed()
             {
-                ID = -2,
+                ID = 2,
                 Breed = "Lab",
                 ImageUrl = "/Images/.jpg",
-                BreedInfo = "Family!"
+            },
+            new DogBreed()
+            {
+                ID = 3,
+                Breed = "Great Dane",
+                ImageUrl = "/Images/.jpg"
             }
             );
 

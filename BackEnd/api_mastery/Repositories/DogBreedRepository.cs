@@ -8,24 +8,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace api_mastery.Repositories
 {
-    public class DogRepository : IDogRepository
+    public class DogBreedRepository : IDogBreedRepository
     {   
-        DogContext db;
+        DogBreedContext db;
 
-        public DogRepository(DogContext db)
+        public DogBreedRepository(DogBreedContext db)
         {
             this.db = db;
         }
 
-        public void Create(Dog dog)
+        public void Create(DogBreed dogBreed)
         {
-            db.Dogs.Add(dog);
+            db.DogBreeds.Add(dogBreed);
             db.SaveChanges();
         }
 
-        public IEnumerable<Dog> GetAll()
+        public IEnumerable<DogBreed> GetAll()
         {
-            return db.Dogs.ToList();
+            return db.DogBreeds.ToList();
         }
     }
 }

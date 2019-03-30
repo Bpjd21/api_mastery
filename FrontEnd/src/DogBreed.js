@@ -1,8 +1,17 @@
 import React, { Component } from "react";
+import "./App.css";
 
 class DogBreed extends Component {
   render() {
-    return <div />;
+    const {
+      dogBreedImg} = this.props;
+
+    return <div>
+      <div className="DogBreedList">
+        <img src={dogBreedImg} />
+      </div>
+
+    </div>
   }
 }
 

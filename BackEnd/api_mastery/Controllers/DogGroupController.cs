@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Mvc;
 
 namespace api_mastery.Controllers
@@ -14,3 +15,12 @@ namespace api_mastery.Controllers
         }
     }
 }
+=======
+
+namespace api_mastery.Controllers
+{
+    public class DogGroupController
+    {
+    }
+}
+>>>>>>> Saturday

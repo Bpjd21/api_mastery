@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api_mastery;
 
 namespace api_mastery.Migrations
 {
     [DbContext(typeof(DogBreedContext))]
-    partial class DogBreedContextModelSnapshot : ModelSnapshot
+    [Migration("20190331014610_addPrivateKey")]
+    partial class addPrivateKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

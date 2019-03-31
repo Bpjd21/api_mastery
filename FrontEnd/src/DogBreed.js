@@ -4,8 +4,8 @@ import DogGroup from "./DogGroup";
 
 class DogBreed extends Component {
   
-  userAddNewBreed = e => {
-    this.props.addNewBreed(this.props.dogBreedName);
+  userAddNewBreed = event => {
+    this.props.userAddName(event.target.value);
   };
 
   render() {
@@ -14,7 +14,7 @@ class DogBreed extends Component {
       addNewBreed,
       deleteNewBreed,
       allDogs,
-      currentDogGroupImg
+      currentDogGroupImg,
     } = this.props;
     const userBreed = allDogs.map(dog => (
       <div className="DogBreedList">
@@ -30,17 +30,19 @@ class DogBreed extends Component {
     <div>
       <div className="UserSelectGroupImg">
       <img src={currentDogGroupImg}/>
-      </div>
+    </div>     
       
-      
-      <ul className="userBreed">{userBreed}</ul>
-      <textarea>Add New Breed</textarea>
-    
+      <ul className="userBreed">{userBreed}</ul>    
     <div>    
       <div className="Buttons">
-      <button onClick={addNewBreed}>Add Breed</button>
-      <button onClick={deleteNewBreed}>Delete Breed</button>
-      </div>
+        <label>            
+          <br/>  
+          <br/>     
+          Dog Breed Name:
+          <input type="text" value={dogBreedName} onChange={this.userAddNewBreed}/>
+        </label>
+        <button onClick={addNewBreed}>Add Dog</button>
+      </div>     
     </div>
     </div>
     )

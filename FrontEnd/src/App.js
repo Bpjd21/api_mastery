@@ -13,12 +13,11 @@ class App extends Component {
         "./images/working-group.jpg"
       ],
       currentDogGroupImg:["./images/Instructions.png"],
-      dogBreedName: ["./images/Instructions.png"],
+      dogBreedName: [""],
       allDogs: ["./images/Instructions.png"]
-
     };
       
-      }
+  }
   componentDidMount() {
     fetch("https://localhost:44349/api/DogBreed")
       .then(res => res.json())
@@ -27,6 +26,10 @@ class App extends Component {
 
   userSelectGroup = imageUrl => {
     this.setState({ currentDogGroupImg: imageUrl})
+  };
+
+  userAddName = text => {
+    this.setState({dogBreedName: text});
   };
 
   addNewBreed = () => {
@@ -69,10 +72,12 @@ class App extends Component {
             <DogBreed 
             currentDogGroupImg={this.state.currentDogGroupImg}
             dogBreedName={this.state.dogBreedName} 
-            allDogs={this.state.allDogs}
             addNewBreed={this.addNewBreed}
+            userAddName={this.userAddName}            
+            allDogs={this.state.allDogs}
             />
           </div>
+          
         </div>
       </div>
     );

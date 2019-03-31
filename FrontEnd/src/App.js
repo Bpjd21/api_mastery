@@ -19,7 +19,7 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    fetch("https://localhost:44349/api/DogBreeds")
+    fetch("https://localhost:44349/api/DogBreed")
       .then(res => res.json())
       .then(json => this.setState({ allDogs: json }));
   }
@@ -29,7 +29,7 @@ class App extends Component {
       dogBreedImg: this.state.dogGroupImg
     };
 
-    fetch("https://localhost:44349/api/DogBreeds", {
+    fetch("https://localhost:44349/api/DogBreed", {
       method: "POST",
       body: JSON.stringify(breed),
       headers: {

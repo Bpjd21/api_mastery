@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import DogGroup from "./DogGroup";
 import DogBreed from "./DogBreed";
-import DogGroupDetails from "./DogGroupDetails";
 
 class App extends Component {
   constructor() {
@@ -14,19 +13,19 @@ class App extends Component {
         "./images/working-group.jpg"
       ],
       dogGroupDetails: ["./images/Instructions.png"],
-      dogBreedImg: [""],
-      allDogs: []
-    };
+      dogBreedName: ["Husky",
+      "German Shepard"],
+      };
   }
   componentDidMount() {
     fetch("https://localhost:44384/api/DogBreeds")
       .then(res => res.json())
-      .then(json => this.setState({ allDogs: json }));
+      .then(json => this.setState({ dogBreedName: json }));
   }
-5
+
   addNewBreed = () => {
     const breed = {
-      dogBreedImg: this.state.dogGroupImg
+      dogBreedImg: this.state.dogBreedName
     };
   
     fetch("https://localhost:44384/api/DogBreeds", {
@@ -57,17 +56,14 @@ class App extends Component {
           <div className="DogGroup">
             <DogGroup
              dogGroupImg={this.state.dogGroupImg} 
-             groupList={this.groupList}          
+             groupList={this.groupList}       
             />
           </div>
-          <div className="DogGroupDetails">
-            <DogGroupDetails
-            dogGroupDetails={this.state.dogGroupDetails}
-            />
-          </div>          
+                  
           <div className="DogBreed">
             <DogBreed 
-            dogBreedImg={this.state.dogBreedImg}
+            dogGroupDetails={this.dogGroupDetails}
+            dogBreedImg={this.state.dogBreedName}
              />
           </div>
         </div>

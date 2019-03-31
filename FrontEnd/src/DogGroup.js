@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import './App.css';
 
 class DogGroup extends Component {
-  userSelectGroup = e => {
+  /*userSelectGroup = e => {
     const myUrl = new URL(e.target.src);
     this.props.groupList(myUrl.pathname);
-  };
+  };*/
   render() {
     const { dogGroupImg }= this.props;
     const groupImg = dogGroupImg.map(item => (
       <li key={item}>
-        <img src={item} alt="DogGroup" onClick={this.userSelectGroup} />
+        <img src={item} alt="DogGroup" onClick={this.dogGroupImg} />
       </li>
     ));   
 

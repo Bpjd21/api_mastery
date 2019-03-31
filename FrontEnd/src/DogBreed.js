@@ -1,21 +1,28 @@
 import React, { Component } from "react";
 import "./App.css";
+import DogGroup from "./DogGroup";
 
 class DogBreed extends Component {
   
   userAddNewBreed = e => {
-    this.props.addNewBreed(this.props.dogBreedImg);
+    this.props.addNewBreed(this.props.dogBreedName);
   };
 
   render() {
     const {
-      dogBreedImg,
+      dogGroupDetails,
+      dogBreedName,
       addNewBreed,
       deleteNewBreed
     } = this.props;
     return <div>
+      <div className="DogGroupDetails">
+       <img src={dogGroupDetails} />
+      </div>
       <div className="DogBreedList">
-        <img src={dogBreedImg} />
+        <ul>
+          <li>{dogBreedName}</li>
+        </ul>        
       </div>
       <div className="Buttons">
       <button onClick={addNewBreed}>Add Breed</button>

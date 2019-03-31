@@ -49,6 +49,3 @@ namespace api_mastery.Controllers
         }
     }
 }
-
-    }
-}

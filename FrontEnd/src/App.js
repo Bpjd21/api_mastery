@@ -56,7 +56,8 @@ class App extends Component {
         <div className="Body">
           <div className="DogGroup">
             <DogGroup
-             dogGroupImg={this.state.dogGroupImg}           
+             dogGroupImg={this.state.dogGroupImg} 
+             groupList={this.groupList}          
             />
           </div>
           <div className="DogGroupDetails">

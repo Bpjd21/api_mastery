@@ -9,8 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace api_mastery.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    
     public class DogGroupController
     {
         private DogGroupRepository repo;

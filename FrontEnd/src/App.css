@@ -21,13 +21,13 @@ width: 80%;
 .Body{
   display: grid;
   grid-template-columns: 1fr 30px 1fr;  
+  grid-template-rows: 1fr 1fr;
   padding: 1rem;
   margin: 0;
 }
 
 .DogGroup img{
-  display: flex;
-  flex-direction: column;
+  grid-column: 1/2;
   max-width: 90%;
   border: solid grey 2px;
   box-shadow: 8px 5px 5px gray;
@@ -45,8 +45,16 @@ width: 80%;
   padding-bottom: 1rem;
 }
 
+.DogGroupDetails {
+  grid-column: 3/4;
+  text-align: center;
+  height: 10rem;
+  max-width: 100%;
+}
+
 .DogBreed {
-  grid-column: 3;
+  grid-column: 3/4;
+  grid-row: 2;
 }
 
 .DogBreedList {

@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 
 class DogBreed extends Component {
-  userSelectBreed = e => {
-    const myUrl = new URL(e.target.src);
-    this.props.breedList(myUrl.pathname);
-  };
-  userAddDogBreed = e => {
-    this.props.AddNewBreed(this.props.dogBreedImg);
+  
+  userAddNewBreed = e => {
+    this.props.addNewBreed(this.props.dogBreedImg);
   };
 
   render() {

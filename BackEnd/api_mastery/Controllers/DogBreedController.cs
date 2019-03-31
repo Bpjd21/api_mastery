@@ -31,5 +31,24 @@ namespace api_mastery.Controllers
         {
             repo.Create(dogBreed);
         }
+
+        
+        [HttpPost]
+        public ActionResult Delete(DogBreed dogBreed)
+        {
+
+            repo.Delete(dogBreed);
+            return RedirectToAction("DogBreeds");
+        }
+
+        [HttpPost]
+        public ActionResult Edit(DogBreed dogBreed)
+        {
+            repo.Edit(dogBreed);
+            return RedirectToAction("DogBreeds/" + dogBreed.Id);
+        }
+    }
+}
+
     }
 }

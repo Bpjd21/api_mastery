@@ -13,18 +13,22 @@ class App extends Component {
         "./images/working-group.jpg"
       ],
       dogGroupDetails: ["./images/Instructions.png"],
-      dogBreedName: ["Husky",
+      dogBreedName: [
+      "Husky",
       "German Shepard"],
-      };
-  }
+      allDogs: []
+
+    };
+      
+      }
   componentDidMount() {
     fetch("https://localhost:44349/api/DogBreed")
       .then(res => res.json())
-      .then(json => this.setState({ dogBreedName: json }));
+      .then(json => this.setState({ allDogs: json }));
   }
   addNewBreed = () => {
     const breed = {
-      dogBreedImg: this.state.dogBreedName
+      dogBreedName: this.state.dogBreedName
     };
 
     fetch("https://localhost:44349/api/DogBreed", {
@@ -54,12 +58,12 @@ class App extends Component {
         <div className="Body">
           <div className="DogGroup">
             <DogGroup dogGroupImg={this.state.dogGroupImg} />
-          </div>
-          <div className="DogGroupDetails">
-            <DogGroupDetails dogGroupDetails={this.state.dogGroupDetails} />
-          </div>
+          </div>         
           <div className="DogBreed">
-            <DogBreed dogBreedImg={this.state.dogBreedImg} />
+            <DogBreed 
+            dogBreedName={this.state.dogBreedName} 
+            allDogs={this.state.allDogs}
+            />
           </div>
         </div>
       </div>

@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import './App.css';
 
 class DogGroup extends Component {
-  /*userSelectGroup = e => {
-    const myUrl = new URL(e.target.src);
-    this.props.groupList(myUrl.pathname);
-  };*/
+ 
   render() {
     const { dogGroupImg }= this.props;
     const groupImg = dogGroupImg.map(item => (

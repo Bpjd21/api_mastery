@@ -29,40 +29,34 @@ namespace api_mastery
             {
                 Id = 1,
                 DogBreedName = "Husky",
-                DogBreedImg = "/Images/.jpg",
                 GroupId = 1,
             },
             new DogBreed()
             {
                 Id = 2,
                 DogBreedName = "BloodHound",
-                DogBreedImg = "/Images/.jpg",
                 GroupId = 2,
             },
             new DogBreed()
             {
                 Id = 3,
                 DogBreedName = "German Shepherd",
-                DogBreedImg = "/Images/.jpg",
                 GroupId = 3,
             });
 
             modelBuilder.Entity<DogGroup>().HasData(
             new DogGroup() {
                 Id = 1,
-                DogGroupName = "Working",
                 DogGroupImg = "/Images/working-group.jpg"
             },
 
             new DogGroup() {
                 Id = 2,
-                DogGroupName = "Hound",
                 DogGroupImg = "/Images/Hounds_group.jpg"
             },
 
             new DogGroup() {
                 Id = 3,
-                DogGroupName = "Herding",
                 DogGroupImg = "/Images/working-group.jpg"
             });        
 

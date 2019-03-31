@@ -10,25 +10,30 @@ class DogBreed extends Component {
 
   render() {
     const {
-      dogGroupDetails,
       dogBreedName,
       addNewBreed,
-      deleteNewBreed
+      deleteNewBreed,
+      allDogs
     } = this.props;
-    return <div>
-      <div className="DogGroupDetails">
-       <img src={dogGroupDetails} />
-      </div>
+    const userBreed = allDogs.map(dog => (
       <div className="DogBreedList">
-        <ul>
-          <li>{dogBreedName}</li>
-        </ul>        
-      </div>
+      <ul>
+        <li key={dog}>
+          <p>{dog.dogBreedName}</p>
+        </li>
+      </ul>        
+    </div>
+    ))
+    return ( <div><ul className="userBreed">{userBreed}</ul>
+    
+    <div>    
       <div className="Buttons">
       <button onClick={addNewBreed}>Add Breed</button>
       <button onClick={deleteNewBreed}>Delete Breed</button>
       </div>
     </div>
+    </div>
+    )
   }
 }
 

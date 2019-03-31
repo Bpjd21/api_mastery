@@ -8,7 +8,6 @@ namespace api_mastery.Models
     public class DogGroup
     {
         public int Id { get; set; }
-        public string DogGroupName { get; set; }
         public string DogGroupImg { get; set; }
     }
 }

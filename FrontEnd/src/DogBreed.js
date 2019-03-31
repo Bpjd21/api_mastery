@@ -24,7 +24,11 @@ class DogBreed extends Component {
       </ul>        
     </div>
     ))
-    return ( <div><ul className="userBreed">{userBreed}</ul>
+    return ( 
+    
+    <div>
+      <ul className="FixedBreedList">{dogBreedName}</ul>
+      <ul className="userBreed">{userBreed}</ul>
     
     <div>    
       <div className="Buttons">

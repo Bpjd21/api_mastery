@@ -29,13 +29,12 @@ namespace api_mastery
             services.AddDbContext<DogBreedContext>();
             services.AddScoped<IDogBreedRepository, DogBreedRepository>();
 
-            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            services.AddCors(o => o.AddPolicy("Dogs", builder =>
             {
                 builder.AllowAnyOrigin()
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -52,18 +51,10 @@ namespace api_mastery
                     app.UseHsts();
                 }
 
-                app.UseCors("MyPolicy");
+                app.UseCors("Dogs");
                 app.UseHttpsRedirection();
                 app.UseMvc();
-
-                app.UseStaticFiles();
-
-                app.UseMvc(routes =>
-                {
-                    routes.MapRoute(
-                        name: "default",
-                        template: "{controller=Dog}/{action=Index}/{id?}");
-                });
+                app.UseStaticFiles();             
             
         }
     }

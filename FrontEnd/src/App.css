@@ -70,3 +70,12 @@ width: 80%;
   grid-column: 3/4;
   max-width: 100%;
 }
+
+.UserSelectGroupImg img{
+max-width: 90%;
+border: solid grey 2px;
+box-shadow: 8px 5px 5px gray;
+padding: 0;
+
+}
+

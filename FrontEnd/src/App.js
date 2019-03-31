@@ -13,8 +13,8 @@ class App extends Component {
         "./images/working-group.jpg"
       ],
       currentDogGroupImg:["./images/Instructions.png"],
-      dogBreedName: [],
-      allDogs: []
+      dogBreedName: ["./images/Instructions.png"],
+      allDogs: ["./images/Instructions.png"]
 
     };
       
@@ -63,7 +63,7 @@ class App extends Component {
             <DogGroup 
             dogGroupImg={this.state.dogGroupImg}
             userSelectGroup={this.userSelectGroup} 
-            currentDogGroupImg={this.state.currentDogGroupImg}/>
+            />
           </div>         
           <div className="DogBreed">
             <DogBreed 

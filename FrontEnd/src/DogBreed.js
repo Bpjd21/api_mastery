@@ -28,7 +28,11 @@ class DogBreed extends Component {
     return ( 
     
     <div>
-      <ul className="FixedBreedList">{dogBreedName}</ul>
+      <div className="UserSelectGroupImg">
+      <img src={currentDogGroupImg}/>
+      </div>
+      
+      
       <ul className="userBreed">{userBreed}</ul>
       <textarea>Add New Breed</textarea>
     

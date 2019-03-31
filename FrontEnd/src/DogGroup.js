@@ -21,7 +21,6 @@ class DogGroup extends Component {
 
     return (
     <div>
-      <img src={userSelectGroup}/>
       <ul id="groupImg">{groupImg}</ul>      
     </div> 
     )  

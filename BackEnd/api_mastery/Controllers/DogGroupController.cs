@@ -13,9 +13,9 @@ namespace api_mastery.Controllers
     [ApiController]
     public class DogGroupController
     {
-        private IDogGroupRepository repo;
+        private DogGroupRepository repo;
 
-        public DogGroupController(IDogGroupRepository repo)
+        public DogGroupController(DogGroupRepository repo)
         {
             this.repo = repo;
         }

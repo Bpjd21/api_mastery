@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api_mastery;
 
 namespace api_mastery.Migrations
 {
     [DbContext(typeof(DogBreedContext))]
-    partial class DogBreedContextModelSnapshot : ModelSnapshot
+    [Migration("20190331012342_AddDogGroupModel")]
+    partial class AddDogGroupModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,9 +37,9 @@ namespace api_mastery.Migrations
                     b.ToTable("DogBreeds");
 
                     b.HasData(
-                        new { Id = 1, DogBreedImg = "/Images/.jpg", DogBreedName = "Husky", GroupId = 1 },
-                        new { Id = 2, DogBreedImg = "/Images/.jpg", DogBreedName = "BloodHound", GroupId = 2 },
-                        new { Id = 3, DogBreedImg = "/Images/.jpg", DogBreedName = "German Shepherd", GroupId = 3 }
+                        new { Id = 1, DogBreedImg = "/Images/.jpg", DogBreedName = "Husky", GroupId = 0 },
+                        new { Id = 2, DogBreedImg = "/Images/.jpg", DogBreedName = "Lab", GroupId = 0 },
+                        new { Id = 3, DogBreedImg = "/Images/.jpg", DogBreedName = "Great Dane", GroupId = 0 }
                     );
                 });
 
@@ -49,17 +51,9 @@ namespace api_mastery.Migrations
 
                     b.Property<string>("DogGroupImg");
 
-                    b.Property<string>("DogGroupName");
-
                     b.HasKey("Id");
 
                     b.ToTable("DogGroups");
-
-                    b.HasData(
-                        new { Id = 1, DogGroupImg = "/Images/working-group.jpg", DogGroupName = "Working" },
-                        new { Id = 2, DogGroupImg = "/Images/Hounds_group.jpg", DogGroupName = "Hound" },
-                        new { Id = 3, DogGroupImg = "/Images/working-group.jpg", DogGroupName = "Herding" }
-                    );
                 });
 #pragma warning restore 612, 618
         }

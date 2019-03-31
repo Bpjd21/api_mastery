@@ -7,7 +7,6 @@ class DogGroup extends Component {
     const groupImg = dogGroupImg.map(item => (
       <li key={item}>
         <img src={item} alt="DogGroup" onClick={this.userSelectGroup} />
-        
       </li>
     ));
   

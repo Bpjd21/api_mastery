@@ -10,6 +10,7 @@ namespace api_mastery
     public class DogBreedContext : DbContext
     {
         public DbSet<DogBreed> DogBreeds { get; set; }
+        public DbSet<DogGroup> DogGroups { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,23 +27,44 @@ namespace api_mastery
             modelBuilder.Entity<DogBreed>().HasData(
             new DogBreed()
             {
-                ID = 1,
-                Breed = "Husky",
-                ImageUrl = "/Images/.jpg",
+                Id = 1,
+                DogBreedName = "Husky",
+                DogBreedImg = "/Images/.jpg",
+                GroupId = 1,
             },
             new DogBreed()
             {
-                ID = 2,
-                Breed = "Lab",
-                ImageUrl = "/Images/.jpg",
+                Id = 2,
+                DogBreedName = "BloodHound",
+                DogBreedImg = "/Images/.jpg",
+                GroupId = 2,
             },
             new DogBreed()
             {
-                ID = 3,
-                Breed = "Great Dane",
-                ImageUrl = "/Images/.jpg"
-            }
-            );
+                Id = 3,
+                DogBreedName = "German Shepherd",
+                DogBreedImg = "/Images/.jpg",
+                GroupId = 3,
+            });
+
+            modelBuilder.Entity<DogGroup>().HasData(
+            new DogGroup() {
+                Id = 1,
+                DogGroupName = "Working",
+                DogGroupImg = "/Images/working-group.jpg"
+            },
+
+            new DogGroup() {
+                Id = 2,
+                DogGroupName = "Hound",
+                DogGroupImg = "/Images/Hounds_group.jpg"
+            },
+
+            new DogGroup() {
+                Id = 3,
+                DogGroupName = "Herding",
+                DogGroupImg = "/Images/working-group.jpg"
+            });        
 
             base.OnModelCreating(modelBuilder);
         }

@@ -27,6 +27,23 @@ namespace api_mastery.Repositories
         {
             return db.DogBreeds.ToList();
         }
+
+        public void Delete(DogBreed dogBreed)
+        {
+            db.DogBreeds.Remove(dogBreed);
+            db.SaveChanges();
+        }
+
+        public void Edit(DogBreed dogBreed)
+        {
+            db.Update(dogBreed);
+            db.SaveChanges();
+        }
+
+        public DogBreed GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

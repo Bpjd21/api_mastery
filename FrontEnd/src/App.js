@@ -18,33 +18,32 @@ class App extends Component {
       };
   }
   componentDidMount() {
-    fetch("https://localhost:44384/api/DogBreeds")
+    fetch("https://localhost:44349/api/DogBreed")
       .then(res => res.json())
       .then(json => this.setState({ dogBreedName: json }));
   }
-
   addNewBreed = () => {
     const breed = {
       dogBreedImg: this.state.dogBreedName
     };
-  
-    fetch("https://localhost:44384/api/DogBreeds", {
-    method: "POST",
-    body: JSON.stringify(breed),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-    .then(res => {
-      if (res.ok) {
-        const newDogs = [...this.state.allDogs, breed];
-        this.setState({ allDogs: newDogs });
+
+    fetch("https://localhost:44349/api/DogBreed", {
+      method: "POST",
+      body: JSON.stringify(breed),
+      headers: {
+        "Content-Type": "application/json"
       }
     })
-    .catch(err => {
-      console.error(err);
-    });
-  }
+      .then(res => {
+        if (res.ok) {
+          const newDogs = [...this.state.allDogs, breed];
+          this.setState({ allDogs: newDogs });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
   render() {
     return (
       <div className="App">
@@ -54,17 +53,13 @@ class App extends Component {
         </div>
         <div className="Body">
           <div className="DogGroup">
-            <DogGroup
-             dogGroupImg={this.state.dogGroupImg} 
-             groupList={this.groupList}       
-            />
+            <DogGroup dogGroupImg={this.state.dogGroupImg} />
           </div>
-                  
+          <div className="DogGroupDetails">
+            <DogGroupDetails dogGroupDetails={this.state.dogGroupDetails} />
+          </div>
           <div className="DogBreed">
-            <DogBreed 
-            dogGroupDetails={this.dogGroupDetails}
-            dogBreedImg={this.state.dogBreedName}
-             />
+            <DogBreed dogBreedImg={this.state.dogBreedImg} />
           </div>
         </div>
       </div>

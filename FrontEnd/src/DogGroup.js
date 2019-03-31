@@ -11,7 +11,6 @@ class DogGroup extends Component {
 
     const {
        dogGroupImg,
-       userSelectGroup,
     }= this.props;
     const groupImg = dogGroupImg.map(item => (
       <li key={item}>

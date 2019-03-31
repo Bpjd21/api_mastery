@@ -26,8 +26,7 @@ namespace api_mastery
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DogBreedContext>();
-            services.AddScoped<IDogBreedRepository, DogBreedRepository>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddCors(o => o.AddPolicy("Dogs", builder =>
             {
@@ -35,7 +34,9 @@ namespace api_mastery
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<DogBreedContext>();
+            services.AddScoped<IDogBreedRepository, DogBreedRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,9 +54,7 @@ namespace api_mastery
 
                 app.UseCors("Dogs");
                 app.UseHttpsRedirection();
-                app.UseMvc();
-                app.UseStaticFiles();             
-            
+                app.UseMvc();                      
         }
     }
 }

@@ -14,7 +14,7 @@ class App extends Component {
       ],
       currentDogGroupImg:["./images/Instructions.png"],
       dogBreedName: [""],
-      allDogs: ["./images/Instructions.png"]
+      allDogs: []
     };
       
   }
@@ -37,7 +37,7 @@ class App extends Component {
       dogBreedName: this.state.dogBreedName
     };
 
-    fetch("https://localhost:44349/api/DogBreed", {
+    fetch("https://localhost:44349/api/dogbreed", {
       method: "POST",
       body: JSON.stringify(breed),
       headers: {
@@ -54,11 +54,11 @@ class App extends Component {
         console.error(err);
       });
   };
-  render() {
+  render() {    
     return (
       <div className="App">
         <div className="Header">
-          <img src="/images/group-of-dogs.jpg" />
+          <img src="/images/group-of-dogs.jpg" alt="group-of-dogs"/>
           <p>Dog Groups and the Breeds Within</p>
         </div>
         <div className="Body">
@@ -76,8 +76,7 @@ class App extends Component {
             userAddName={this.userAddName}            
             allDogs={this.state.allDogs}
             />
-          </div>
-          
+          </div>           
         </div>
       </div>
     );

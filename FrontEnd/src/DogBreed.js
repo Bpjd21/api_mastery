@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import DogGroup from "./DogGroup";
 
 class DogBreed extends Component {
   
@@ -12,26 +11,19 @@ class DogBreed extends Component {
     const {
       dogBreedName,
       addNewBreed,
-      deleteNewBreed,
       allDogs,
       currentDogGroupImg,
     } = this.props;
     const userBreed = allDogs.map(dog => (
-      <div className="DogBreedList">
-      <ul>
-        <li key={dog}>
+      <div>            
           <p>{dog.dogBreedName}</p>
-        </li>
-      </ul>        
-    </div>
-    ))
-    return ( 
-    
-    <div>
+      </div>
+    ));
+    return (     
+    <div>  
       <div className="UserSelectGroupImg">
-      <img src={currentDogGroupImg}/>
-    </div>     
-      
+      <img src={currentDogGroupImg} alt="CurrentDog"/>
+    </div>           
       <ul className="userBreed">{userBreed}</ul>    
     <div>    
       <div className="Buttons">
@@ -39,7 +31,7 @@ class DogBreed extends Component {
           <br/>  
           <br/>     
           Dog Breed Name:
-          <input type="text" value={dogBreedName} onChange={this.userAddNewBreed}/>
+          <input type="text" value={allDogs.dogBreedName} onChange={this.userAddNewBreed}/>
         </label>
         <button onClick={addNewBreed}>Add Dog</button>
       </div>     

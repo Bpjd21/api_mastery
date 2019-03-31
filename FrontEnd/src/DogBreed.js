@@ -13,7 +13,8 @@ class DogBreed extends Component {
       dogBreedName,
       addNewBreed,
       deleteNewBreed,
-      allDogs
+      allDogs,
+      currentDogGroupImg
     } = this.props;
     const userBreed = allDogs.map(dog => (
       <div className="DogBreedList">
@@ -29,6 +30,7 @@ class DogBreed extends Component {
     <div>
       <ul className="FixedBreedList">{dogBreedName}</ul>
       <ul className="userBreed">{userBreed}</ul>
+      <textarea>Add New Breed</textarea>
     
     <div>    
       <div className="Buttons">

@@ -12,10 +12,8 @@ class App extends Component {
         "./images/Hounds_group.jpg",
         "./images/working-group.jpg"
       ],
-      dogGroupDetails: ["./images/Instructions.png"],
-      dogBreedName: [
-      "Husky",
-      "German Shepard"],
+      currentDogGroupImg:["./images/Instructions.png"],
+      dogBreedName: [],
       allDogs: []
 
     };
@@ -26,6 +24,11 @@ class App extends Component {
       .then(res => res.json())
       .then(json => this.setState({ allDogs: json }));
   }
+
+  userSelectGroup = imageUrl => {
+    this.setState({ currentDogGroupImg: imageUrl})
+  };
+
   addNewBreed = () => {
     const breed = {
       dogBreedName: this.state.dogBreedName
@@ -57,12 +60,17 @@ class App extends Component {
         </div>
         <div className="Body">
           <div className="DogGroup">
-            <DogGroup dogGroupImg={this.state.dogGroupImg} />
+            <DogGroup 
+            dogGroupImg={this.state.dogGroupImg}
+            userSelectGroup={this.userSelectGroup} 
+            currentDogGroupImg={this.state.currentDogGroupImg}/>
           </div>         
           <div className="DogBreed">
             <DogBreed 
+            currentDogGroupImg={this.state.currentDogGroupImg}
             dogBreedName={this.state.dogBreedName} 
             allDogs={this.state.allDogs}
+            addNewBreed={this.addNewBreed}
             />
           </div>
         </div>

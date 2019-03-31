@@ -54,7 +54,8 @@ width: 80%;
 
 .DogBreed {
   grid-column: 3/4;
-  grid-row: 2;
+  grid-row: 1;
+  text-align: center;
 }
 
 .DogBreedList {

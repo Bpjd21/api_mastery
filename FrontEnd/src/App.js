@@ -23,7 +23,7 @@ class App extends Component {
       .then(res => res.json())
       .then(json => this.setState({ allDogs: json }));
   }
-
+5
   addNewBreed = () => {
     const breed = {
       dogBreedImg: this.state.dogGroupImg

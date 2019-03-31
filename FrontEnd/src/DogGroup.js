@@ -8,10 +8,7 @@ class DogGroup extends Component {
     this.props.groupList(myUrl.pathname);
   };
   render() {
-    const {
-      dogGroupImg,    
-    }= this.props;
-
+    const { dogGroupImg }= this.props;
     const groupImg = dogGroupImg.map(group => (
       <li key={group}>
         <img src={group} alt="DogGroup" onClick={this.userSelectGroup} />

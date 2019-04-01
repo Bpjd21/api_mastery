@@ -9,20 +9,20 @@ using api_mastery;
 namespace api_mastery.Migrations
 {
     [DbContext(typeof(DogBreedContext))]
-    [Migration("20190331161010_changedModelToMatchReact")]
-    partial class changedModelToMatchReact
+    [Migration("20190401030606_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("api_mastery.Models.DogBreed", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("DogBreedId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -30,33 +30,33 @@ namespace api_mastery.Migrations
 
                     b.Property<int>("GroupId");
 
-                    b.HasKey("Id");
+                    b.HasKey("DogBreedId");
 
                     b.ToTable("DogBreeds");
 
                     b.HasData(
-                        new { Id = 1, DogBreedName = "Husky", GroupId = 1 },
-                        new { Id = 2, DogBreedName = "BloodHound", GroupId = 2 },
-                        new { Id = 3, DogBreedName = "German Shepherd", GroupId = 3 }
+                        new { DogBreedId = 1, DogBreedName = "Husky", GroupId = 1 },
+                        new { DogBreedId = 2, DogBreedName = "BloodHound", GroupId = 2 },
+                        new { DogBreedId = 3, DogBreedName = "German Shepherd", GroupId = 3 }
                     );
                 });
 
             modelBuilder.Entity("api_mastery.Models.DogGroup", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("DogGroupId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("DogGroupImg");
 
-                    b.HasKey("Id");
+                    b.HasKey("DogGroupId");
 
                     b.ToTable("DogGroups");
 
                     b.HasData(
-                        new { Id = 1, DogGroupImg = "/Images/working-group.jpg" },
-                        new { Id = 2, DogGroupImg = "/Images/Hounds_group.jpg" },
-                        new { Id = 3, DogGroupImg = "/Images/working-group.jpg" }
+                        new { DogGroupId = 1, DogGroupImg = "/Images/working-group.jpg" },
+                        new { DogGroupId = 2, DogGroupImg = "/Images/Hounds_group.jpg" },
+                        new { DogGroupId = 3, DogGroupImg = "/Images/working-group.jpg" }
                     );
                 });
 #pragma warning restore 612, 618

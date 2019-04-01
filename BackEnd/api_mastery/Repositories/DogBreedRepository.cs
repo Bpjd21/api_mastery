@@ -19,7 +19,7 @@ namespace api_mastery.Repositories
 
         public DogBreed GetByID(int id)
         {
-            return db.DogBreeds.Single(dogBreed => dogBreed.Id == id);
+            return db.DogBreeds.Single(dogBreed => dogBreed.DogBreedId == id);
         }
 
         public void Create(DogBreed dogBreed)

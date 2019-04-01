@@ -12,11 +12,10 @@ class App extends Component {
         "./images/Hounds_group.jpg",
         "./images/working-group.jpg"
       ],
-      currentDogGroupImg:["./images/Instructions.png"],
+      currentDogGroupImg: ["./images/Instructions.png"],
       dogBreedName: [""],
       allDogs: []
     };
-      
   }
   componentDidMount() {
     fetch("https://localhost:44349/api/DogBreed")
@@ -25,11 +24,11 @@ class App extends Component {
   }
 
   userSelectGroup = imageUrl => {
-    this.setState({ currentDogGroupImg: imageUrl})
+    this.setState({ currentDogGroupImg: imageUrl });
   };
 
   userAddName = text => {
-    this.setState({dogBreedName: text});
+    this.setState({ dogBreedName: text });
   };
 
   addNewBreed = () => {
@@ -37,7 +36,7 @@ class App extends Component {
       dogBreedName: this.state.dogBreedName
     };
 
-    fetch("https://localhost:44349/api/dogbreed", {
+    fetch("https://localhost:44349/api/DogBreed", {
       method: "POST",
       body: JSON.stringify(breed),
       headers: {
@@ -54,29 +53,29 @@ class App extends Component {
         console.error(err);
       });
   };
-  render() {    
+  render() {
     return (
       <div className="App">
         <div className="Header">
-          <img src="/images/group-of-dogs.jpg" alt="group-of-dogs"/>
+          <img src="/images/group-of-dogs.jpg" alt="group-of-dogs" />
           <p>Dog Groups and the Breeds Within</p>
         </div>
         <div className="Body">
           <div className="DogGroup">
-            <DogGroup 
-            dogGroupImg={this.state.dogGroupImg}
-            userSelectGroup={this.userSelectGroup} 
+            <DogGroup
+              dogGroupImg={this.state.dogGroupImg}
+              userSelectGroup={this.userSelectGroup}
             />
-          </div>         
+          </div>
           <div className="DogBreed">
-            <DogBreed 
-            currentDogGroupImg={this.state.currentDogGroupImg}
-            dogBreedName={this.state.dogBreedName} 
-            addNewBreed={this.addNewBreed}
-            userAddName={this.userAddName}            
-            allDogs={this.state.allDogs}
+            <DogBreed
+              currentDogGroupImg={this.state.currentDogGroupImg}
+              dogBreedName={this.state.dogBreedName}
+              addNewBreed={this.addNewBreed}
+              userAddName={this.userAddName}
+              allDogs={this.state.allDogs}
             />
-          </div>           
+          </div>
         </div>
       </div>
     );

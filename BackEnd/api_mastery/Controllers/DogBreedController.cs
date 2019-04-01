@@ -45,7 +45,7 @@ namespace api_mastery.Controllers
         public ActionResult Edit(DogBreed dogBreed)
         {
             dogBreedRepo.Edit(dogBreed);
-            return RedirectToAction("DogBreeds/" + dogBreed.Id);
+            return RedirectToAction("DogBreeds/" + dogBreed.DogBreedId);
         }
     }
 }

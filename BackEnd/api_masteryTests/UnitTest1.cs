@@ -2,8 +2,6 @@ using api_mastery.Controllers;
 using api_mastery.Models;
 using api_mastery.Repositories;
 using NSubstitute;
-using System;
-using System.Linq;
 using Xunit;
 
 namespace api_masteryTests

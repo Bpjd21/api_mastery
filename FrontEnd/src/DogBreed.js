@@ -8,7 +8,6 @@ class DogBreed extends Component {
 
   render() {
     const {
-      dogBreedName,
       addNewBreed,
       allDogs,
       currentDogGroupImg

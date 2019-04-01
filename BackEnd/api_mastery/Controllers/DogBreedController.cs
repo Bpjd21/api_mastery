@@ -13,23 +13,23 @@ namespace api_mastery.Controllers
     [ApiController]
     public class DogBreedController : ControllerBase
     {
-        private IDogBreedRepository repo;
+        private IDogBreedRepository dogBreedRepo;
 
-        public DogBreedController(IDogBreedRepository repo)
+        public DogBreedController(IDogBreedRepository dogBreedRepo)
         {
-            this.repo = repo;
+            this.dogBreedRepo = dogBreedRepo;
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<DogBreed>> Get()
         {
-            return repo.GetAll().ToArray();
+            return dogBreedRepo.GetAll().ToArray();
         }
 
         [HttpPost]
         public void Post([FromBody] DogBreed dogBreed)
         {
-            repo.Create(dogBreed);
+            dogBreedRepo.Create(dogBreed);
         }
 
         
@@ -37,14 +37,14 @@ namespace api_mastery.Controllers
         public ActionResult Delete(DogBreed dogBreed)
         {
 
-            repo.Delete(dogBreed);
+            dogBreedRepo.Delete(dogBreed);
             return RedirectToAction("DogBreeds");
         }
 
         [HttpPost]
         public ActionResult Edit(DogBreed dogBreed)
         {
-            repo.Edit(dogBreed);
+            dogBreedRepo.Edit(dogBreed);
             return RedirectToAction("DogBreeds/" + dogBreed.Id);
         }
     }

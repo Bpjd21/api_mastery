@@ -10,25 +10,25 @@ using Microsoft.AspNetCore.Mvc;
 namespace api_mastery.Controllers
 {
     
-    public class DogGroupController
+    public class DogGroupController : Controller
     {
-        private DogGroupRepository repo;
+        IDogGroupRepository dogGroupRepo;
 
-        public DogGroupController(DogGroupRepository repo)
+        public DogGroupController(IDogGroupRepository dogGroupRepo)
         {
-            this.repo = repo;
+            this.dogGroupRepo = dogGroupRepo;
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<DogGroup>> Get()
         {
-            return repo.GetAll().ToArray();
+            return dogGroupRepo.GetAll().ToArray();
         }
 
         [HttpPost]
         public void Post([FromBody] DogGroup dogGroup)
         {
-            repo.Create(dogGroup);
+            dogGroupRepo.Create(dogGroup);
         }
     }
 }

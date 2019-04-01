@@ -26,7 +26,7 @@ namespace api_mastery.Controllers
             return dogBreedRepo.GetAll().ToArray();
         }
 
-        [HttpPost]
+        [HttpDelete]
         public void Post([FromBody] DogBreed dogBreed)
         {
             dogBreedRepo.Create(dogBreed);
